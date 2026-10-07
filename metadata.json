@@ -1,0 +1,6 @@
+{
+  "name": "MetroPulse - Live Urban Transit & Arrival Telemetry",
+  "description": "High-legibility real-time transit intelligence dashboard, arrival countdowns, interactive network map, and route telemetry.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
