@@ -6,8 +6,9 @@ import { LiveRadarView } from './components/LiveRadarView';
 import { LineDetailView } from './components/LineDetailView';
 import { TripPlannerView } from './components/TripPlannerView';
 import { ServiceAlertsView } from './components/ServiceAlertsView';
+import { LTABusArrivalView } from './components/LTABusArrivalView';
 import { VehicleTelemetryDrawer } from './components/VehicleTelemetryDrawer';
-import { ChevronUp, ChevronDown, Compass, Radio, Map, Route, Navigation, Bell } from 'lucide-react';
+import { ChevronUp, ChevronDown, Compass, Radio, Map, Route, Navigation, Bell, Bus } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
   const { activeTab, setActiveTab, selectedStation, stationArrivals } = useTransit();
@@ -32,6 +33,7 @@ const MainLayout: React.FC = () => {
           }`}
         >
           {activeTab === 'radar' && <LiveRadarView />}
+          {activeTab === 'lta' && <LTABusArrivalView />}
           {activeTab === 'lines' && <LineDetailView />}
           {activeTab === 'planner' && <TripPlannerView />}
           {activeTab === 'alerts' && <ServiceAlertsView />}
@@ -102,6 +104,7 @@ const MainLayout: React.FC = () => {
             ) : (
               <>
                 {activeTab === 'radar' && <LiveRadarView />}
+                {activeTab === 'lta' && <LTABusArrivalView />}
                 {activeTab === 'lines' && <LineDetailView />}
                 {activeTab === 'planner' && <TripPlannerView />}
                 {activeTab === 'alerts' && <ServiceAlertsView />}
@@ -134,6 +137,20 @@ const MainLayout: React.FC = () => {
             >
               <Radio className="w-4 h-4 mb-0.5" />
               <span>Radar</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActiveTab('lta');
+                if (mobileSheetState === 'collapsed') setMobileSheetState('half');
+              }}
+              className={`flex flex-col items-center justify-center p-1 text-[10px] font-semibold ${
+                activeTab === 'lta' ? 'text-[#4edea3]' : 'text-[#94A3B8]'
+              }`}
+            >
+              <Bus className="w-4 h-4 mb-0.5" />
+              <span>SG Buses</span>
             </button>
 
             <button

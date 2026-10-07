@@ -15,8 +15,9 @@ export const TopBar: React.FC = () => {
     triggerSimulatedDelay,
   } = useTransit();
 
-  const navItems: { id: 'radar' | 'map' | 'lines' | 'planner' | 'alerts'; label: string }[] = [
+  const navItems: { id: 'radar' | 'lta' | 'map' | 'lines' | 'planner' | 'alerts'; label: string }[] = [
     { id: 'radar', label: 'Live Radar' },
+    { id: 'lta', label: 'SG LTA Buses' },
     { id: 'map', label: 'Network Map' },
     { id: 'lines', label: 'Lines & Timetable' },
     { id: 'planner', label: 'Trip Planner' },

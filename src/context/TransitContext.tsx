@@ -14,8 +14,8 @@ interface TransitContextType {
   setSelectedVehicleId: (id: string | null) => void;
   selectedRoute: Route;
   setSelectedRouteId: (id: string) => void;
-  activeTab: 'radar' | 'map' | 'lines' | 'planner' | 'alerts';
-  setActiveTab: (tab: 'radar' | 'map' | 'lines' | 'planner' | 'alerts') => void;
+  activeTab: 'radar' | 'lta' | 'map' | 'lines' | 'planner' | 'alerts';
+  setActiveTab: (tab: 'radar' | 'lta' | 'map' | 'lines' | 'planner' | 'alerts') => void;
   modeFilter: TransitMode | 'all';
   setModeFilter: (mode: TransitMode | 'all') => void;
   accessibilityFilter: boolean;
@@ -51,7 +51,7 @@ export const TransitProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [selectedStationId, setSelectedStationId] = useState<string>('ST-01');
   const [selectedVehicleId, setSelectedVehicleId] = useState<string | null>(null);
   const [selectedRouteId, setSelectedRouteId] = useState<string>('CYAN-L');
-  const [activeTab, setActiveTab] = useState<'radar' | 'map' | 'lines' | 'planner' | 'alerts'>('radar');
+  const [activeTab, setActiveTab] = useState<'radar' | 'lta' | 'map' | 'lines' | 'planner' | 'alerts'>('radar');
 
   const [modeFilter, setModeFilter] = useState<TransitMode | 'all'>('all');
   const [accessibilityFilter, setAccessibilityFilter] = useState<boolean>(false);
